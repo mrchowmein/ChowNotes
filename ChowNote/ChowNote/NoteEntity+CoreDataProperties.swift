@@ -15,7 +15,7 @@ import CoreData
 extension NoteEntity {
 
     @NSManaged var body: String?
+    @NSManaged var date: NSDate?
     @NSManaged var title: String?
-    //@NSManaged var date: NSDate?
 
 }

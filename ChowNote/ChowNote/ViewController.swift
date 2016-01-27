@@ -29,7 +29,15 @@ class ViewController: UIViewController {
 
     @IBAction func cancelButton(sender: AnyObject) {
         
-        dismissViewControllerAnimated(true, completion: nil)
+        let isPresentingInAddNote = presentingViewController is UINavigationController
+        
+        if isPresentingInAddNote {
+            dismissViewControllerAnimated(true, completion: nil)
+        }
+        else {
+            navigationController!.popViewControllerAnimated(true)
+        }
+        
     }
     
     

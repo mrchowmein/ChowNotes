@@ -14,7 +14,9 @@
 		ED0AFB9F1C5720E20029DDFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED0AFB9E1C5720E20029DDFB /* Assets.xcassets */; };
 		ED0AFBA21C5720E20029DDFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED0AFBA01C5720E20029DDFB /* LaunchScreen.storyboard */; };
 		ED0AFBAD1C5720E20029DDFB /* ChowNoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0AFBAC1C5720E20029DDFB /* ChowNoteTests.swift */; };
-		ED59127E1C588C5A00F22A4F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED59127D1C588C5A00F22A4F /* MainViewController.swift */; };
+		ED5912801C5891C700F22A4F /* NoteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED59127F1C5891C700F22A4F /* NoteTableViewController.swift */; };
+		ED5912851C58949E00F22A4F /* NoteEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5912831C58949E00F22A4F /* NoteEntity+CoreDataProperties.swift */; };
+		ED5912861C58949E00F22A4F /* NoteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5912841C58949E00F22A4F /* NoteEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +41,9 @@
 		ED0AFBA81C5720E20029DDFB /* ChowNoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChowNoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED0AFBAC1C5720E20029DDFB /* ChowNoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChowNoteTests.swift; sourceTree = "<group>"; };
 		ED0AFBAE1C5720E20029DDFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ED59127D1C588C5A00F22A4F /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		ED59127F1C5891C700F22A4F /* NoteTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteTableViewController.swift; sourceTree = "<group>"; };
+		ED5912831C58949E00F22A4F /* NoteEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NoteEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		ED5912841C58949E00F22A4F /* NoteEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,8 @@
 		ED0AFB931C5720E10029DDFB /* ChowNote */ = {
 			isa = PBXGroup;
 			children = (
+				ED5912831C58949E00F22A4F /* NoteEntity+CoreDataProperties.swift */,
+				ED5912841C58949E00F22A4F /* NoteEntity.swift */,
 				ED0AFB941C5720E10029DDFB /* AppDelegate.swift */,
 				ED0AFB961C5720E10029DDFB /* ViewController.swift */,
 				ED0AFB981C5720E10029DDFB /* Main.storyboard */,
@@ -88,7 +94,7 @@
 				ED0AFBA01C5720E20029DDFB /* LaunchScreen.storyboard */,
 				ED0AFBA31C5720E20029DDFB /* Info.plist */,
 				ED0AFB9B1C5720E20029DDFB /* ChowNote.xcdatamodeld */,
-				ED59127D1C588C5A00F22A4F /* MainViewController.swift */,
+				ED59127F1C5891C700F22A4F /* NoteTableViewController.swift */,
 			);
 			path = ChowNote;
 			sourceTree = "<group>";
@@ -206,9 +212,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED0AFB971C5720E10029DDFB /* ViewController.swift in Sources */,
+				ED5912801C5891C700F22A4F /* NoteTableViewController.swift in Sources */,
 				ED0AFB951C5720E10029DDFB /* AppDelegate.swift in Sources */,
 				ED0AFB9D1C5720E20029DDFB /* ChowNote.xcdatamodeld in Sources */,
-				ED59127E1C588C5A00F22A4F /* MainViewController.swift in Sources */,
+				ED5912861C58949E00F22A4F /* NoteEntity.swift in Sources */,
+				ED5912851C58949E00F22A4F /* NoteEntity+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
