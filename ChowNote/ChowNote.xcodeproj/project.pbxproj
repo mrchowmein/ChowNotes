@@ -1,0 +1,428 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ED0AFB951C5720E10029DDFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0AFB941C5720E10029DDFB /* AppDelegate.swift */; };
+		ED0AFB971C5720E10029DDFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0AFB961C5720E10029DDFB /* ViewController.swift */; };
+		ED0AFB9A1C5720E10029DDFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED0AFB981C5720E10029DDFB /* Main.storyboard */; };
+		ED0AFB9D1C5720E20029DDFB /* ChowNote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED0AFB9B1C5720E20029DDFB /* ChowNote.xcdatamodeld */; };
+		ED0AFB9F1C5720E20029DDFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED0AFB9E1C5720E20029DDFB /* Assets.xcassets */; };
+		ED0AFBA21C5720E20029DDFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED0AFBA01C5720E20029DDFB /* LaunchScreen.storyboard */; };
+		ED0AFBAD1C5720E20029DDFB /* ChowNoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0AFBAC1C5720E20029DDFB /* ChowNoteTests.swift */; };
+		ED59127E1C588C5A00F22A4F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED59127D1C588C5A00F22A4F /* MainViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ED0AFBA91C5720E20029DDFB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED0AFB891C5720E10029DDFB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED0AFB901C5720E10029DDFB;
+			remoteInfo = ChowNote;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		ED0AFB911C5720E10029DDFB /* ChowNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChowNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED0AFB941C5720E10029DDFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ED0AFB961C5720E10029DDFB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ED0AFB991C5720E10029DDFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ED0AFB9C1C5720E20029DDFB /* ChowNote.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChowNote.xcdatamodel; sourceTree = "<group>"; };
+		ED0AFB9E1C5720E20029DDFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ED0AFBA11C5720E20029DDFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ED0AFBA31C5720E20029DDFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED0AFBA81C5720E20029DDFB /* ChowNoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChowNoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED0AFBAC1C5720E20029DDFB /* ChowNoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChowNoteTests.swift; sourceTree = "<group>"; };
+		ED0AFBAE1C5720E20029DDFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED59127D1C588C5A00F22A4F /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ED0AFB8E1C5720E10029DDFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED0AFBA51C5720E20029DDFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ED0AFB881C5720E10029DDFB = {
+			isa = PBXGroup;
+			children = (
+				ED0AFB931C5720E10029DDFB /* ChowNote */,
+				ED0AFBAB1C5720E20029DDFB /* ChowNoteTests */,
+				ED0AFB921C5720E10029DDFB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ED0AFB921C5720E10029DDFB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ED0AFB911C5720E10029DDFB /* ChowNote.app */,
+				ED0AFBA81C5720E20029DDFB /* ChowNoteTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ED0AFB931C5720E10029DDFB /* ChowNote */ = {
+			isa = PBXGroup;
+			children = (
+				ED0AFB941C5720E10029DDFB /* AppDelegate.swift */,
+				ED0AFB961C5720E10029DDFB /* ViewController.swift */,
+				ED0AFB981C5720E10029DDFB /* Main.storyboard */,
+				ED0AFB9E1C5720E20029DDFB /* Assets.xcassets */,
+				ED0AFBA01C5720E20029DDFB /* LaunchScreen.storyboard */,
+				ED0AFBA31C5720E20029DDFB /* Info.plist */,
+				ED0AFB9B1C5720E20029DDFB /* ChowNote.xcdatamodeld */,
+				ED59127D1C588C5A00F22A4F /* MainViewController.swift */,
+			);
+			path = ChowNote;
+			sourceTree = "<group>";
+		};
+		ED0AFBAB1C5720E20029DDFB /* ChowNoteTests */ = {
+			isa = PBXGroup;
+			children = (
+				ED0AFBAC1C5720E20029DDFB /* ChowNoteTests.swift */,
+				ED0AFBAE1C5720E20029DDFB /* Info.plist */,
+			);
+			path = ChowNoteTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ED0AFB901C5720E10029DDFB /* ChowNote */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED0AFBB11C5720E20029DDFB /* Build configuration list for PBXNativeTarget "ChowNote" */;
+			buildPhases = (
+				ED0AFB8D1C5720E10029DDFB /* Sources */,
+				ED0AFB8E1C5720E10029DDFB /* Frameworks */,
+				ED0AFB8F1C5720E10029DDFB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChowNote;
+			productName = ChowNote;
+			productReference = ED0AFB911C5720E10029DDFB /* ChowNote.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ED0AFBA71C5720E20029DDFB /* ChowNoteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED0AFBB41C5720E20029DDFB /* Build configuration list for PBXNativeTarget "ChowNoteTests" */;
+			buildPhases = (
+				ED0AFBA41C5720E20029DDFB /* Sources */,
+				ED0AFBA51C5720E20029DDFB /* Frameworks */,
+				ED0AFBA61C5720E20029DDFB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ED0AFBAA1C5720E20029DDFB /* PBXTargetDependency */,
+			);
+			name = ChowNoteTests;
+			productName = ChowNoteTests;
+			productReference = ED0AFBA81C5720E20029DDFB /* ChowNoteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ED0AFB891C5720E10029DDFB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Jason Chan";
+				TargetAttributes = {
+					ED0AFB901C5720E10029DDFB = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 43Q9N9349A;
+					};
+					ED0AFBA71C5720E20029DDFB = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 43Q9N9349A;
+						TestTargetID = ED0AFB901C5720E10029DDFB;
+					};
+				};
+			};
+			buildConfigurationList = ED0AFB8C1C5720E10029DDFB /* Build configuration list for PBXProject "ChowNote" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ED0AFB881C5720E10029DDFB;
+			productRefGroup = ED0AFB921C5720E10029DDFB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ED0AFB901C5720E10029DDFB /* ChowNote */,
+				ED0AFBA71C5720E20029DDFB /* ChowNoteTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ED0AFB8F1C5720E10029DDFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED0AFBA21C5720E20029DDFB /* LaunchScreen.storyboard in Resources */,
+				ED0AFB9F1C5720E20029DDFB /* Assets.xcassets in Resources */,
+				ED0AFB9A1C5720E10029DDFB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED0AFBA61C5720E20029DDFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ED0AFB8D1C5720E10029DDFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED0AFB971C5720E10029DDFB /* ViewController.swift in Sources */,
+				ED0AFB951C5720E10029DDFB /* AppDelegate.swift in Sources */,
+				ED0AFB9D1C5720E20029DDFB /* ChowNote.xcdatamodeld in Sources */,
+				ED59127E1C588C5A00F22A4F /* MainViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED0AFBA41C5720E20029DDFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED0AFBAD1C5720E20029DDFB /* ChowNoteTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ED0AFBAA1C5720E20029DDFB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED0AFB901C5720E10029DDFB /* ChowNote */;
+			targetProxy = ED0AFBA91C5720E20029DDFB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		ED0AFB981C5720E10029DDFB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED0AFB991C5720E10029DDFB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ED0AFBA01C5720E20029DDFB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED0AFBA11C5720E20029DDFB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ED0AFBAF1C5720E20029DDFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ED0AFBB01C5720E20029DDFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ED0AFBB21C5720E20029DDFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ChowNote/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jason-chan.ChowNote";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		ED0AFBB31C5720E20029DDFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ChowNote/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jason-chan.ChowNote";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		ED0AFBB51C5720E20029DDFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ChowNoteTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jason-chan.ChowNoteTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChowNote.app/ChowNote";
+			};
+			name = Debug;
+		};
+		ED0AFBB61C5720E20029DDFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ChowNoteTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jason-chan.ChowNoteTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChowNote.app/ChowNote";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ED0AFB8C1C5720E10029DDFB /* Build configuration list for PBXProject "ChowNote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED0AFBAF1C5720E20029DDFB /* Debug */,
+				ED0AFBB01C5720E20029DDFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED0AFBB11C5720E20029DDFB /* Build configuration list for PBXNativeTarget "ChowNote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED0AFBB21C5720E20029DDFB /* Debug */,
+				ED0AFBB31C5720E20029DDFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED0AFBB41C5720E20029DDFB /* Build configuration list for PBXNativeTarget "ChowNoteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED0AFBB51C5720E20029DDFB /* Debug */,
+				ED0AFBB61C5720E20029DDFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		ED0AFB9B1C5720E20029DDFB /* ChowNote.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				ED0AFB9C1C5720E20029DDFB /* ChowNote.xcdatamodel */,
+			);
+			currentVersion = ED0AFB9C1C5720E20029DDFB /* ChowNote.xcdatamodel */;
+			path = ChowNote.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = ED0AFB891C5720E10029DDFB /* Project object */;
+}
