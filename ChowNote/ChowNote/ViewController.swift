@@ -9,12 +9,13 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var titleName: UITextField!
     
     
     @IBOutlet weak var bodyText: UITextField!
+    
     
     var note: NoteEntity? = nil
 
@@ -125,6 +126,29 @@ class ViewController: UIViewController {
         }
         
      
+    }
+    
+// Mark: - Share button
+    
+    @IBAction func shareButton(sender: UIBarButtonItem) {
+        
+        let titleShare = "Title: \(titleName.text!)"
+        
+        let textToShare = "Note: \(bodyText.text!)"
+        
+            let objectsToShare = [titleShare, textToShare]
+            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            
+            self.presentViewController(activityVC, animated: true, completion: nil)
+        
+    
+    }
+    
+// Mark: - dismiss keyboard
+    
+override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?){
+       view.endEditing(true)
+    super.touchesBegan(touches, withEvent: event)
     }
 
 }
