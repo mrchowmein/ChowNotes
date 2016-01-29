@@ -36,14 +36,9 @@ class ViewController: UIViewController {
 
     @IBAction func cancelButton(sender: AnyObject) {
         
-        let isPresentingInAddNote = presentingViewController is UINavigationController
         
-        if isPresentingInAddNote {
-            navigationController!.popViewControllerAnimated(true)
-        }
-        else {
-            navigationController!.popViewControllerAnimated(true)
-        }
+    navigationController!.popViewControllerAnimated(true)
+        
         
     }
     
@@ -58,7 +53,7 @@ class ViewController: UIViewController {
         
     navigationController!.popViewControllerAnimated(true)
         
-        //dismissViewControllerAnimated(true, completion: nil)
+    
         
     }
     
