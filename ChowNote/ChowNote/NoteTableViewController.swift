@@ -13,13 +13,13 @@ import CoreData
 class NoteTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
     // Mark: - Properties
+
     lazy var context: NSManagedObjectContext = {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         return appDelegate.managedObjectContext
     }()
     
     var fetchedResultsController: NSFetchedResultsController!
-  
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -155,14 +155,22 @@ class NoteTableViewController: UITableViewController, NSFetchedResultsController
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "edit" {
+            let cell = sender as! UITableViewCell
+            let indexPath = tableView.indexPathForCell(cell)
+            let noteControl:ViewController = segue.destinationViewController as! ViewController
+            let note:NoteEntity = fetchedResultsController.objectAtIndexPath(indexPath!) as! NoteEntity
+            noteControl.note = note
+        }
     }
-    */
+    
+    
+    
 
 }

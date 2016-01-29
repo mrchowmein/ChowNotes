@@ -16,10 +16,19 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var bodyText: UITextField!
     
+    var note: NoteEntity? = nil
+    
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        if note != nil {
+            bodyText.text = note?.body
+            titleName.text = note?.title
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,16 +51,30 @@ class ViewController: UIViewController {
     
     
     @IBAction func saveButton(sender: AnyObject) {
-       
+        
+        if note != nil {
+            editNote()
+        } else {
+            createNote()
+        }
+        
+        navigationController!.popViewControllerAnimated(true)
+        //dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+    
+    
+    //create note method
+    func createNote() {
         let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let context: NSManagedObjectContext = appDel.managedObjectContext
         
-        //add note
+        
         let newNote = NSEntityDescription.insertNewObjectForEntityForName("NoteEntity", inManagedObjectContext: context)
         newNote.setValue(titleName.text, forKey: "title")
         newNote.setValue(bodyText.text, forKey: "body")
         
-    
+        
         do {
             try context.save()
         } catch{
@@ -86,8 +109,28 @@ class ViewController: UIViewController {
         titleName.text = ""
         bodyText.text = ""
         
-        dismissViewControllerAnimated(true, completion: nil)
         
+    }
+    
+    // edit note method
+    
+    func editNote() {
+        
+        let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDel.managedObjectContext
+        
+        note?.title = titleName.text!
+        note?.body = bodyText.text!
+    
+       
+        do {
+            try context.save()
+        } catch {
+            
+            print("error saving data")
+        }
+        
+     
     }
 
 }
