@@ -35,7 +35,7 @@
                     <navigationItem key="navigationItem" title="ChowNote" id="UP9-10-3vX">
                         <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="ane-UI-6Rt">
                             <connections>
-                                <segue destination="uwV-NG-3wE" kind="presentation" id="cZa-XG-zSR"/>
+                                <segue destination="uwV-NG-3wE" kind="show" id="cZa-XG-zSR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

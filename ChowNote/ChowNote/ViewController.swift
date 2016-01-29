@@ -17,8 +17,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var bodyText: UITextField!
     
     var note: NoteEntity? = nil
-    
-    
 
     
     override func viewDidLoad() {
@@ -41,7 +39,7 @@ class ViewController: UIViewController {
         let isPresentingInAddNote = presentingViewController is UINavigationController
         
         if isPresentingInAddNote {
-            dismissViewControllerAnimated(true, completion: nil)
+            navigationController!.popViewControllerAnimated(true)
         }
         else {
             navigationController!.popViewControllerAnimated(true)
@@ -58,7 +56,8 @@ class ViewController: UIViewController {
             createNote()
         }
         
-        navigationController!.popViewControllerAnimated(true)
+    navigationController!.popViewControllerAnimated(true)
+        
         //dismissViewControllerAnimated(true, completion: nil)
         
     }

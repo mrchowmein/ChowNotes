@@ -110,7 +110,11 @@ class NoteTableViewController: UITableViewController, NSFetchedResultsController
             tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Automatic)
         case .Delete:
             tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Automatic)
-        default: break
+        case .Update:
+           tableView.reloadRowsAtIndexPaths([indexPath!], withRowAnimation: .Automatic)
+        case .Move:
+            tableView.reloadData()
+        //default: break
         }
     }
 // Mark: - Delete cells
