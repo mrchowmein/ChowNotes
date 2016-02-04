@@ -17,6 +17,9 @@
 		ED5912801C5891C700F22A4F /* NoteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED59127F1C5891C700F22A4F /* NoteTableViewController.swift */; };
 		ED5912851C58949E00F22A4F /* NoteEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5912831C58949E00F22A4F /* NoteEntity+CoreDataProperties.swift */; };
 		ED5912861C58949E00F22A4F /* NoteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5912841C58949E00F22A4F /* NoteEntity.swift */; };
+		ED9238461C604875006A5095 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9238451C604875006A5095 /* ShareViewController.swift */; };
+		ED9238491C604875006A5095 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED9238471C604875006A5095 /* MainInterface.storyboard */; };
+		ED92384D1C604875006A5095 /* ChowNoteShare.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = ED9238431C604874006A5095 /* ChowNoteShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,7 +30,28 @@
 			remoteGlobalIDString = ED0AFB901C5720E10029DDFB;
 			remoteInfo = ChowNote;
 		};
+		ED92384B1C604875006A5095 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED0AFB891C5720E10029DDFB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED9238421C604874006A5095;
+			remoteInfo = ChowNoteShare;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		ED9238511C604875006A5095 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				ED92384D1C604875006A5095 /* ChowNoteShare.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		ED0AFB911C5720E10029DDFB /* ChowNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChowNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +68,10 @@
 		ED59127F1C5891C700F22A4F /* NoteTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteTableViewController.swift; sourceTree = "<group>"; };
 		ED5912831C58949E00F22A4F /* NoteEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NoteEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		ED5912841C58949E00F22A4F /* NoteEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteEntity.swift; sourceTree = "<group>"; };
+		ED9238431C604874006A5095 /* ChowNoteShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ChowNoteShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED9238451C604875006A5095 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		ED9238481C604875006A5095 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		ED92384A1C604875006A5095 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +89,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ED9238401C604874006A5095 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -69,6 +104,7 @@
 			children = (
 				ED0AFB931C5720E10029DDFB /* ChowNote */,
 				ED0AFBAB1C5720E20029DDFB /* ChowNoteTests */,
+				ED9238441C604874006A5095 /* ChowNoteShare */,
 				ED0AFB921C5720E10029DDFB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,6 +114,7 @@
 			children = (
 				ED0AFB911C5720E10029DDFB /* ChowNote.app */,
 				ED0AFBA81C5720E20029DDFB /* ChowNoteTests.xctest */,
+				ED9238431C604874006A5095 /* ChowNoteShare.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,6 +145,16 @@
 			path = ChowNoteTests;
 			sourceTree = "<group>";
 		};
+		ED9238441C604874006A5095 /* ChowNoteShare */ = {
+			isa = PBXGroup;
+			children = (
+				ED9238451C604875006A5095 /* ShareViewController.swift */,
+				ED9238471C604875006A5095 /* MainInterface.storyboard */,
+				ED92384A1C604875006A5095 /* Info.plist */,
+			);
+			path = ChowNoteShare;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -118,10 +165,12 @@
 				ED0AFB8D1C5720E10029DDFB /* Sources */,
 				ED0AFB8E1C5720E10029DDFB /* Frameworks */,
 				ED0AFB8F1C5720E10029DDFB /* Resources */,
+				ED9238511C604875006A5095 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				ED92384C1C604875006A5095 /* PBXTargetDependency */,
 			);
 			name = ChowNote;
 			productName = ChowNote;
@@ -146,6 +195,23 @@
 			productReference = ED0AFBA81C5720E20029DDFB /* ChowNoteTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		ED9238421C604874006A5095 /* ChowNoteShare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED9238501C604875006A5095 /* Build configuration list for PBXNativeTarget "ChowNoteShare" */;
+			buildPhases = (
+				ED92383F1C604874006A5095 /* Sources */,
+				ED9238401C604874006A5095 /* Frameworks */,
+				ED9238411C604874006A5095 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChowNoteShare;
+			productName = ChowNoteShare;
+			productReference = ED9238431C604874006A5095 /* ChowNoteShare.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -165,6 +231,10 @@
 						DevelopmentTeam = 43Q9N9349A;
 						TestTargetID = ED0AFB901C5720E10029DDFB;
 					};
+					ED9238421C604874006A5095 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 43Q9N9349A;
+					};
 				};
 			};
 			buildConfigurationList = ED0AFB8C1C5720E10029DDFB /* Build configuration list for PBXProject "ChowNote" */;
@@ -182,6 +252,7 @@
 			targets = (
 				ED0AFB901C5720E10029DDFB /* ChowNote */,
 				ED0AFBA71C5720E20029DDFB /* ChowNoteTests */,
+				ED9238421C604874006A5095 /* ChowNoteShare */,
 			);
 		};
 /* End PBXProject section */
@@ -201,6 +272,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED9238411C604874006A5095 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED9238491C604875006A5095 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +307,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ED92383F1C604874006A5095 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED9238461C604875006A5095 /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -235,6 +322,11 @@
 			isa = PBXTargetDependency;
 			target = ED0AFB901C5720E10029DDFB /* ChowNote */;
 			targetProxy = ED0AFBA91C5720E20029DDFB /* PBXContainerItemProxy */;
+		};
+		ED92384C1C604875006A5095 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED9238421C604874006A5095 /* ChowNoteShare */;
+			targetProxy = ED92384B1C604875006A5095 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -253,6 +345,14 @@
 				ED0AFBA11C5720E20029DDFB /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		ED9238471C604875006A5095 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED9238481C604875006A5095 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -345,6 +445,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = ChowNote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jason-chan.ChowNote";
@@ -356,6 +457,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = ChowNote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jason-chan.ChowNote";
@@ -384,6 +486,28 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jason-chan.ChowNoteTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChowNote.app/ChowNote";
+			};
+			name = Release;
+		};
+		ED92384E1C604875006A5095 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ChowNoteShare/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jason-chan.ChowNote.ChowNoteShare";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		ED92384F1C604875006A5095 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ChowNoteShare/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jason-chan.ChowNote.ChowNoteShare";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -416,6 +540,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		ED9238501C604875006A5095 /* Build configuration list for PBXNativeTarget "ChowNoteShare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED92384E1C604875006A5095 /* Debug */,
+				ED92384F1C604875006A5095 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 
