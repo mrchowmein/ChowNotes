@@ -162,10 +162,10 @@ class NoteTableViewController: UITableViewController, UISearchBarDelegate, NSFet
         searchBar.setShowsCancelButton(true, animated: true)
         
         if !searchText.isEmpty {
-            // Clear out the fetchedResultController
+            
             fetchedResultsController = nil
             
-            // Setup the fetch request
+            
             let fetchRequest = NSFetchRequest(entityName: "NoteEntity")
             
             fetchRequest.predicate = NSPredicate(format: "title contains[cd] %@", searchText)
@@ -173,14 +173,14 @@ class NoteTableViewController: UITableViewController, UISearchBarDelegate, NSFet
             let sortDescriptor = NSSortDescriptor(key: "title", ascending: true)
             fetchRequest.sortDescriptors = [sortDescriptor]
             
-            // Pass the fetchRequest and the context as parameters to the fetchedResultController
+            
             fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext:context,
                 sectionNameKeyPath: nil, cacheName: nil)
             
-            // Make the fetchedResultController a delegate of the MoviesViewController class
+            
             fetchedResultsController.delegate = self
             
-            // Execute the fetch request or display an error message in the Debugger console
+        
             
             
             do {
