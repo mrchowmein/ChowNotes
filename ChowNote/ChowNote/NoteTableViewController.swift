@@ -10,29 +10,28 @@ import UIKit
 import CoreData
 
 
-class NoteTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
-
+class NoteTableViewController: UITableViewController, UISearchBarDelegate, NSFetchedResultsControllerDelegate {
+    
     // Mark: - Properties
-
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     lazy var context: NSManagedObjectContext = {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         return appDelegate.managedObjectContext
     }()
     
+    // property for holding records
     var fetchedResultsController: NSFetchedResultsController!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    func fetchManagedObjects() {
+        
         let fetchRequest = NSFetchRequest(entityName: "NoteEntity")
         let fetchSort = NSSortDescriptor(key: "title", ascending: true)
         fetchRequest.sortDescriptors = [fetchSort]
         
-        //2
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         fetchedResultsController.delegate = self
         
-        //3
         do {
             try fetchedResultsController.performFetch()
             
@@ -40,6 +39,15 @@ class NoteTableViewController: UITableViewController, NSFetchedResultsController
             print("Unable to perform fetch: \(error.localizedDescription)")
         }
         
+        
+        
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        fetchManagedObjects()
         
     }
     
@@ -52,36 +60,41 @@ class NoteTableViewController: UITableViewController, NSFetchedResultsController
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-       
+        
+        
         guard let sectionCount = fetchedResultsController.sections?.count else {
             return 0
         }
         return sectionCount
     }
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        
         guard let sectionData = fetchedResultsController.sections?[section] else {
             return 0
         }
         return sectionData.numberOfObjects
+        
+        
     }
-
+    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //1
-        let movie = fetchedResultsController.objectAtIndexPath(indexPath) as! NoteEntity
+        let noteTitle = fetchedResultsController.objectAtIndexPath(indexPath) as! NoteEntity
         //2
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell")!
         //3
-        cell.textLabel!.text = movie.valueForKey("title")as? String
+        cell.textLabel!.text = noteTitle.valueForKey("title")as? String
         
         return cell
     }
-
+    
     // MARK: -  FetchedResultsController Delegate
     
     func controllerWillChangeContent(controller: NSFetchedResultsController) {
@@ -111,22 +124,22 @@ class NoteTableViewController: UITableViewController, NSFetchedResultsController
         case .Delete:
             tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Automatic)
         case .Update:
-           tableView.reloadRowsAtIndexPaths([indexPath!], withRowAnimation: .Automatic)
+            tableView.reloadRowsAtIndexPaths([indexPath!], withRowAnimation: .Automatic)
         case .Move:
             tableView.reloadData()
-        //default: break
+            //default: break
         }
     }
-// Mark: - Delete cells
+   
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    // Return false if you do not want the specified item to be editable.
+    return true
     }
     */
-
-   
+    
+    
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         // 2
         switch editingStyle {
@@ -143,25 +156,73 @@ class NoteTableViewController: UITableViewController, NSFetchedResultsController
         }
     }
     
-
+    // Mark: - Search
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        searchBar.setShowsCancelButton(true, animated: true)
+        
+        if !searchText.isEmpty {
+            // Clear out the fetchedResultController
+            fetchedResultsController = nil
+            
+            // Setup the fetch request
+            let fetchRequest = NSFetchRequest(entityName: "NoteEntity")
+            
+            fetchRequest.predicate = NSPredicate(format: "title contains[cd] %@", searchText)
+            
+            let sortDescriptor = NSSortDescriptor(key: "title", ascending: true)
+            fetchRequest.sortDescriptors = [sortDescriptor]
+            
+            // Pass the fetchRequest and the context as parameters to the fetchedResultController
+            fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext:context,
+                sectionNameKeyPath: nil, cacheName: nil)
+            
+            // Make the fetchedResultController a delegate of the MoviesViewController class
+            fetchedResultsController.delegate = self
+            
+            // Execute the fetch request or display an error message in the Debugger console
+            
+            
+            do {
+                try fetchedResultsController.performFetch()
+                
+            } catch let error as NSError {
+                print("Unable to perform fetch: \(error.localizedDescription)")
+            }
+            
+            // Refresh the table view to show search results
+            tableView.reloadData()
+        }
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchBar.text = nil
+        searchBar.showsCancelButton = false // Hide the cancel
+        searchBar.resignFirstResponder() // Hide the keyboard
+        fetchManagedObjects()
+        
+        // Refresh the table view to show fetchedResultController results
+        tableView.reloadData()
+    }
+    
     /*
     // Override to support rearranging the table view.
     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
+    
     }
     */
-
+    
     /*
     // Override to support conditional rearranging of the table view.
     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    // Return false if you do not want the item to be re-orderable.
+    return true
     }
     */
-
+    
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -176,5 +237,5 @@ class NoteTableViewController: UITableViewController, NSFetchedResultsController
     
     
     
-
+    
 }
