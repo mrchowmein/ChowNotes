@@ -14,11 +14,13 @@ class NoteTableViewController: UITableViewController, UISearchBarDelegate, NSFet
     
     // Mark: - Properties
     @IBOutlet weak var searchBar: UISearchBar!
+
+    let context = CoreDataStack.sharedInstance.managedObjectContext
     
-    lazy var context: NSManagedObjectContext = {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        return appDelegate.managedObjectContext
-    }()
+//    lazy var context: NSManagedObjectContext = {
+//        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+//        return appDelegate.managedObjectContext
+//    }()
     
     // property for holding records
     var fetchedResultsController: NSFetchedResultsController!
@@ -53,6 +55,7 @@ class NoteTableViewController: UITableViewController, UISearchBarDelegate, NSFet
     
     override func viewDidAppear(animated: Bool) {
         
+        tableView.reloadData()
         
     }
     
