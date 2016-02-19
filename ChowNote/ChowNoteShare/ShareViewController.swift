@@ -10,6 +10,7 @@ import UIKit
 import Social
 import CoreData
 
+
 class ShareViewController: SLComposeServiceViewController {
 
     
@@ -27,7 +28,11 @@ class ShareViewController: SLComposeServiceViewController {
     }
 
     override func didSelectPost() {
+        print("post button")
+        
         self.createNote()
+        
+        self.extensionContext!.completeRequestReturningItems([], completionHandler: nil)
         
     }
 
@@ -61,30 +66,30 @@ class ShareViewController: SLComposeServiceViewController {
             print("error saving data")
         }
         
-        //retrive note
-        do {
-            let request = NSFetchRequest(entityName: "NoteEntity")
-            let results = try context.executeFetchRequest(request)
-            
-            if results.count > 0 {
-                
-                for item in results as! [NSManagedObject]{
-                    
-                    let title = item.valueForKey("title")
-                    //let body = item.valueForKey("body")
-                    
-                    
-                    print(title!)
-                    
-                }
-                
-                
-            }
-            
-            
-        } catch{
-            print("error reading data")
-        }
+//        //retrive note
+//        do {
+//            let request = NSFetchRequest(entityName: "NoteEntity")
+//            let results = try context.executeFetchRequest(request)
+//            
+//            if results.count > 0 {
+//                
+//                for item in results as! [NSManagedObject]{
+//                    
+//                    let title = item.valueForKey("title")
+//                    //let body = item.valueForKey("body")
+//                    
+//                    
+//                    print(title!)
+//                    
+//                }
+//                
+//                
+//            }
+//            
+//            
+//        } catch{
+//            print("error reading data")
+//        }
         
        
         

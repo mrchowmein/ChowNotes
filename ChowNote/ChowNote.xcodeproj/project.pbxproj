@@ -14,6 +14,7 @@
 		ED0AFB9F1C5720E20029DDFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED0AFB9E1C5720E20029DDFB /* Assets.xcassets */; };
 		ED0AFBA21C5720E20029DDFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED0AFBA01C5720E20029DDFB /* LaunchScreen.storyboard */; };
 		ED0AFBAD1C5720E20029DDFB /* ChowNoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0AFBAC1C5720E20029DDFB /* ChowNoteTests.swift */; };
+		ED2929091C76C86700D5BA96 /* ChowNote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED0AFB9B1C5720E20029DDFB /* ChowNote.xcdatamodeld */; };
 		ED5912801C5891C700F22A4F /* NoteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED59127F1C5891C700F22A4F /* NoteTableViewController.swift */; };
 		ED5912851C58949E00F22A4F /* NoteEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5912831C58949E00F22A4F /* NoteEntity+CoreDataProperties.swift */; };
 		ED5912861C58949E00F22A4F /* NoteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5912841C58949E00F22A4F /* NoteEntity.swift */; };
@@ -332,6 +333,7 @@
 			files = (
 				ED9238461C604875006A5095 /* ShareViewController.swift in Sources */,
 				ED7CF2041C6DB33B00BA666E /* CoreDataStack.swift in Sources */,
+				ED2929091C76C86700D5BA96 /* ChowNote.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
