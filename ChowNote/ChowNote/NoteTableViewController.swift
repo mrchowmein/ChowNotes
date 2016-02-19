@@ -55,6 +55,7 @@ class NoteTableViewController: UITableViewController, UISearchBarDelegate, NSFet
     
     override func viewDidAppear(animated: Bool) {
         
+        tableView.reloadData()
         
     }
     
