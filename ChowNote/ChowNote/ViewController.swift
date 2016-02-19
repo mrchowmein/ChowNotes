@@ -13,9 +13,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
 
     @IBOutlet weak var titleName: UITextField!
     
-    
     @IBOutlet weak var bodyText: UITextView!
     
+    let context = CoreDataStack.sharedInstance.managedObjectContext
     
     var note: NoteEntity? = nil
 
@@ -106,9 +106,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
     
     //create note method
     func createNote() {
-        let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let context: NSManagedObjectContext = appDel.managedObjectContext
-        
+//        let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+//        let context: NSManagedObjectContext = appDel.managedObjectContext
+//        
         
         let newNote = NSEntityDescription.insertNewObjectForEntityForName("NoteEntity", inManagedObjectContext: context)
         newNote.setValue(titleName.text, forKey: "title")
@@ -156,9 +156,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
     
     func editNote() {
         
-        let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let context: NSManagedObjectContext = appDel.managedObjectContext
-        
+//        let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+//        let context: NSManagedObjectContext = appDel.managedObjectContext
+//        
         note?.title = titleName.text!
         note?.body = bodyText.text!
     
