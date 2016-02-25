@@ -19,7 +19,7 @@ class CoreDataStack {
     
     lazy var applicationDocumentsDirectory: NSURL = {
         // The directory the application uses to store the Core Data store file. This code uses a directory named "com.jason-chan.ChowNote" in the application's documents Application Support directory.
-        let url = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier("group.chownote")
+        let url = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier("group.com.jchan.ChowNote")
         return url!
     }()
     
@@ -29,14 +29,22 @@ class CoreDataStack {
         return NSManagedObjectModel(contentsOfURL: modelURL)!
     }()
     
-    lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
-        // The persistent store coordinator for the application. This implementation creates and returns a coordinator, having added the store for the application to it. This property is optional since there are legitimate error conditions that could cause the creation of the store to fail.
-        // Create the coordinator and store
+     lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
+        
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-        let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("SingleViewCoreData.sqlite")
+        //let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("SingleViewCoreData.sqlite")
+        
+        
+        let documentDirectory = NSFileManager.defaultManager().URLsForDirectory(NSSearchPathDirectory.DocumentDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask).last! as NSURL
+        let storeURL = documentDirectory.URLByAppendingPathComponent("CoreData.sqlite")
+        
+        
         var failureReason = "There was an error creating or loading the application's saved data."
         do {
-            try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil)
+            //try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil)
+            let options = [NSPersistentStoreUbiquitousContentNameKey: "ChowNoteStore", NSMigratePersistentStoresAutomaticallyOption: true, NSInferMappingModelAutomaticallyOption: true]
+            try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: options)
+            
         } catch {
             // Report any error we got.
             var dict = [String: AnyObject]()
@@ -77,4 +85,7 @@ class CoreDataStack {
             }
         }
     }
+    
+    
+    
 }

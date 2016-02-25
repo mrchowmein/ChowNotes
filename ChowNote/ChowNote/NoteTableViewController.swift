@@ -13,14 +13,17 @@ import CoreData
 class NoteTableViewController: UITableViewController, UISearchBarDelegate, NSFetchedResultsControllerDelegate {
     
     // Mark: - Properties
+    
+    
     @IBOutlet weak var searchBar: UISearchBar!
-
+    
     let context = CoreDataStack.sharedInstance.managedObjectContext
     
-//    lazy var context: NSManagedObjectContext = {
-//        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-//        return appDelegate.managedObjectContext
-//    }()
+    
+    //    lazy var context: NSManagedObjectContext = {
+    //        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    //        return appDelegate.managedObjectContext
+    //    }()
     
     // property for holding records
     var fetchedResultsController: NSFetchedResultsController!
@@ -51,7 +54,50 @@ class NoteTableViewController: UITableViewController, UISearchBarDelegate, NSFet
         
         fetchManagedObjects()
         
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "persistentStoreDidChange", name: NSPersistentStoreCoordinatorStoresDidChangeNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "persistentStoreWillChange:", name: NSPersistentStoreCoordinatorStoresWillChangeNotification, object: context.persistentStoreCoordinator)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "receivediCloudContentChanges:", name: NSPersistentStoreDidImportUbiquitousContentChangesNotification, object: context.persistentStoreCoordinator)
+        
     }
+    
+    override func viewWillDisappear(animated: Bool) {
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: NSPersistentStoreCoordinatorStoresDidChangeNotification, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: NSPersistentStoreCoordinatorStoresWillChangeNotification, object: context.persistentStoreCoordinator)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: NSPersistentStoreDidImportUbiquitousContentChangesNotification, object: context.persistentStoreCoordinator)
+    }
+    
+    func persistentStoreDidChange() {
+        print("LOADING DATA ...")
+        tableView.reloadData()
+    }
+    
+    func persistentStoreWillChange(notification: NSNotification) {
+        print("persistent store will change .. in progress")
+        
+        context.performBlock { () -> Void in
+            if self.context.hasChanges {
+                do {
+                    try self.context.save()
+                }
+                catch {
+                    fatalError()
+                }
+            }
+        }
+    }
+    
+    func receivediCloudContentChanges(notification: NSNotification) {
+        print("received content changes ... ")
+        context.performBlock { () -> Void in
+            self.context.mergeChangesFromContextDidSaveNotification(notification)
+            self.tableView.reloadData()
+        }
+    }
+    
+    
     
     override func viewDidAppear(animated: Bool) {
         
@@ -133,7 +179,7 @@ class NoteTableViewController: UITableViewController, UISearchBarDelegate, NSFet
             //default: break
         }
     }
-   
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -183,7 +229,7 @@ class NoteTableViewController: UITableViewController, UISearchBarDelegate, NSFet
             
             fetchedResultsController.delegate = self
             
-        
+            
             
             
             do {
