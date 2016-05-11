@@ -1,6 +1,7 @@
 # chownotes
 
 Chownotes is a note taking app built around CoreData. It also features iCloud, share and app extension capabilities.
+Chownotes is written in Swift2.
 
 <table class="tg">
   <tr>
@@ -16,7 +17,7 @@ Chownotes is a note taking app built around CoreData. It also features iCloud, s
     <td class="tg-031e">2</td>
   </tr>
   <tr>
-    <td class="tg-031e">As a user, I want to share my notes with other applicationsv</td>
+    <td class="tg-031e">As a user, I want to share my notes with other applications</td>
     <td class="tg-031e">1</td>
   </tr>
   <tr>
